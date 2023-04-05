@@ -14,14 +14,22 @@ a = {2, 7, 11, 15}. Результат = 9
 Как только найдена первая удовлетворяющая условиям пара, можно заканчивать поиск.*/
 
 #include <iostream>
-
-const int sizeArray = 4;
-
+//размер массива
+const int sizeArray = 10;
+//первое число
+const int firstNumber = 2;
+//второе число
+const int secondNumber = 7;
+//первый индекс
+const int firstIndex = 4;
+//второй индекс
+const int secondIndex = 8;
+//
 int main()
 {
-	int arr[sizeArray] = { -2,1,-3,4,-1,2,1,-5,4 };
-	//максимальная сумма
-	int maxSum = 0;
+	int arr[sizeArray];
+	//сумма
+	int sum = firstNumber + secondNumber;
 	//текущая сумма
 	int currentSum = 0;
 	//индексы элементов дающих максимальную сумму
