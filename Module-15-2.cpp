@@ -35,14 +35,10 @@ int main()
 	for (int i = 0; i < sizeArray; ++i) {
 		arr[i] = rand() % 50 * 10;
 	}
-
-	
-
 	//устанавливаем заданные два числа
 	arr[firstIndex] = firstNumber;
 	arr[secondIndex] = secondNumber;
 	
-
 	for (int i = 0; i < sizeArray; ++i) {
 		std::cout << arr[i] << " ";
 	}
