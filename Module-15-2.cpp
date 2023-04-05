@@ -30,27 +30,29 @@ int main()
 	int arr[sizeArray];
 	//сумма
 	int sum = firstNumber + secondNumber;
-	//текущая сумма
-	int currentSum = 0;
-	//индексы элементов дающих максимальную сумму
-	int iMax = 0;
-	int jMax = 0;
+	//заполняем массив случайными числами
+	srand(time(NULL));
+	for (int i = 0; i < sizeArray; ++i) {
+		arr[i] = rand() % 50 * 10;
+	}
+	//устанавливаем заданные два числа
+	arr[firstIndex] = firstNumber;
+	arr[secondIndex] = secondNumber;
+	
+	int number1 = 0;
+	int number2 = 0;
+
 	//два цикла для перебора всех возможных пар элементов
 	for (int i = 0; i < sizeArray; ++i) {
-		for (int j = i; j < sizeArray; ++j) {
-			//подсчёт текущей суммы
-			for (int k = i; k <= j; ++k) {
-				currentSum += arr[k];
+		if (arr[i] < sum) {
+			for (int j = i+1; j < sizeArray; ++j) {
+				if (arr[i] + arr[j] == sum) {
+					number1 = arr[i];
+					number2 = arr[j];
+				}
 			}
-			//если текущая сумма больше максимальной переписываем индексы  и максимальную сумму
-			if (currentSum > maxSum) {
-				iMax = i;
-				jMax = j;
-				maxSum = currentSum;
-			}
-			//сброс текущей суммы перед новой итерацией
-			currentSum = 0;
 		}
+		
 	}
-	std::cout << "the array elements located between the index - " << iMax << " and the index - " << jMax << " give the maximum sum" << std::endl;
+	std::cout << "the array elements located between the index - " << number1 << " and the index - " << number2 << " give the maximum sum" << std::endl;
 }
