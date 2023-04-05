@@ -35,10 +35,20 @@ int main()
 	for (int i = 0; i < sizeArray; ++i) {
 		arr[i] = rand() % 50 * 10;
 	}
+
+	
+
 	//устанавливаем заданные два числа
 	arr[firstIndex] = firstNumber;
 	arr[secondIndex] = secondNumber;
 	
+
+	for (int i = 0; i < sizeArray; ++i) {
+		std::cout << arr[i] << " ";
+	}
+
+	std::cout << std::endl;
+
 	int number1 = 0;
 	int number2 = 0;
 
@@ -52,7 +62,6 @@ int main()
 				}
 			}
 		}
-		
 	}
 	std::cout << "the array elements located between the index - " << number1 << " and the index - " << number2 << " give the maximum sum" << std::endl;
 }
