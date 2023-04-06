@@ -17,13 +17,13 @@ a = {2, 7, 11, 15}. Результат = 9
 //размер массива
 const int sizeArray = 10;
 //первое число
-const int firstNumber = 2;
+const int firstNumber = 4;
 //второе число
-const int secondNumber = 7;
+const int secondNumber = 3;
 //первый индекс
-const int firstIndex = 4;
+const int firstIndex = 0;
 //второй индекс
-const int secondIndex = 8;
+const int secondIndex = 5;
 //
 int main()
 {
@@ -50,14 +50,17 @@ int main()
 
 	//два цикла для перебора всех возможных пар элементов
 	for (int i = 0; i < sizeArray; ++i) {
+		//если элемент массива меньше суммы пропускаем второй цикл
 		if (arr[i] < sum) {
 			for (int j = i+1; j < sizeArray; ++j) {
+				//если сумма совпадает выходим из циклов
 				if (arr[i] + arr[j] == sum) {
 					number1 = arr[i];
 					number2 = arr[j];
+					break;
 				}
 			}
 		}
 	}
-	std::cout << "the array elements located between the index - " << number1 << " and the index - " << number2 << " give the maximum sum" << std::endl;
+	std::cout << "First number - " << number1 << " and second number - " << number2 << std::endl;
 }
