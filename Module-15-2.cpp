@@ -15,15 +15,15 @@ a = {2, 7, 11, 15}. Результат = 9
 
 #include <iostream>
 //размер массива
-const int sizeArray = 10;
+const int sizeArray = 20;
 //первое число
-const int firstNumber = 4;
+const int firstNumber = 8;
 //второе число
-const int secondNumber = 3;
+const int secondNumber = 5;
 //первый индекс
-const int firstIndex = 0;
+const int firstIndex = 2;
 //второй индекс
-const int secondIndex = 5;
+const int secondIndex = 11;
 //
 int main()
 {
@@ -47,17 +47,18 @@ int main()
 
 	int number1 = 0;
 	int number2 = 0;
-
+	//флаг для прерывания цикла
+	bool notFind = true;
 	//два цикла для перебора всех возможных пар элементов
-	for (int i = 0; i < sizeArray; ++i) {
+	for (int i = 0; i < sizeArray && notFind; ++i) {
 		//если элемент массива меньше суммы пропускаем второй цикл
 		if (arr[i] < sum) {
-			for (int j = i+1; j < sizeArray; ++j) {
+			for (int j = i+1; j < sizeArray && notFind; ++j) {
 				//если сумма совпадает выходим из циклов
 				if (arr[i] + arr[j] == sum) {
 					number1 = arr[i];
 					number2 = arr[j];
-					break;
+					notFind = false;
 				}
 			}
 		}
